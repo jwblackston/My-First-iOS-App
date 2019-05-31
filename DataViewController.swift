@@ -10,6 +10,7 @@ import UIKit
 
 class DataViewController: UIViewController {
     var colourIsGreen = false
+    var colourIsRed = false
 
     @IBOutlet weak var dataLabel: UILabel!
     var dataObject: String = ""
@@ -32,6 +33,17 @@ class DataViewController: UIViewController {
         
     }
     
+    @IBAction func hottyToddy(_ sender: Any) {
+        
+        if colourIsRed{
+            view.backgroundColor = UIColor.red
+            colourIsRed = false
+        }
+        else{
+            view.backgroundColor = UIColor.blue
+            colourIsRed = true
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.dataLabel!.text = dataObject
